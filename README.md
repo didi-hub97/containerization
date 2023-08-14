@@ -402,9 +402,9 @@ receivers:
     send_resolved: true
     text: "<!channel> \nsummary: {{ .CommonAnnotations.summary }}\ndescription: {{ .CommonAnnotations.description }}"
 ```
-Check how to set up a slack channel for grafana alerts [here](https://grafana.com/docs/grafana/latest/alerting/manage-notifications/template-notifications/)
+Check how to set up a slack channel for Grafana alerts [here](https://grafana.com/docs/grafana/latest/alerting/manage-notifications/template-notifications/)
 
-* In the prometheus root directory, set the alert rules in the alert.rules
+* In the Prometheus root directory, set the alert rules in the alert.rules
 
 ```
 groups:
@@ -435,20 +435,21 @@ groups:
 * Set up an account on Grafana cloud [here](https://grafana.com/auth/sign-up/create-user)
 * Add data source using Docker Desktop as the data source.
 * Open the Grafana cloud and navigate to your dashboard
-* With the integration, Grafana is able to collect metrics from Docker Desktop and you should see some some visuals
+* With the integration, Grafana is able to collect metrics from Docker Desktop and you should see some visuals
 
 * At the top right of each visual, there are three dots, click on them and select view.
   
-* In the top right corner, click on the drop down and select create alert.
+* In the top right corner, click on the drop-down and select create alert.
   
-<img width="1791" alt="Screenshot 2023-08-04 at 04 49 19" src="https://github.com/dooshima-gbamwuan-deimos/module2/assets/138670122/57a5b414-1695-48e2-9b39-bf752f8b68ba">
-  
-* Navigate to the bottom and create your alert.
+  <img width="1791" alt="Screenshot 2023-08-04 at 04 49 19" src="https://github.com/dooshima-gbamwuan-deimos/module2/assets/138670122/90a646d8-4bf5-4412-af0b-1f57178ef5aa">
 
-<img width="1791" alt="Screenshot 2023-08-04 at 04 49 19" src="https://github.com/dooshima-gbamwuan-deimos/module-2/assets/138670122/87675201-8981-4464-8ad3-cb33dbf8dc17">
+* Navigate to the bottom and create your alert.
+  
+<img width="1404" alt="Screenshot 2023-08-14 at 4 33 32 PM" src="https://github.com/dooshima-gbamwuan-deimos/module2/assets/138670122/d90e2e64-b100-436b-a01a-1a493b2ba311">
 
 * When your alert conditions are met, the selected alert channel will be alerted.
-  
-<img width="1791" alt="Screenshot 2023-08-10 at 12 33 14 PM" src="https://github.com/dooshima-gbamwuan-deimos/module-2/assets/138670122/d172ca7d-e70e-45ad-8185-a400042003de">
 
-_It is important to note that, alert can be created for time series charts_
+<img width="996" alt="Screenshot 2023-08-14 at 4 41 04 PM" src="https://github.com/dooshima-gbamwuan-deimos/module2/assets/138670122/d63f5b04-b369-4c40-a16b-ceb072e30da6">
+ 
+  
+_It is important to note that, an alert can be created for time series charts_
