@@ -2,22 +2,22 @@
 
 ### Task:
 ***
-Containerisation is an important part of software development as it packages an application, it dependencies, runtime, etc 
+Containerization is an important part of software development as it packages an application, its dependencies, runtime, etc 
 into a single container and thus be deployed to where it will run.
-The task involves, dockerizing a php application that sends data to a mysql database.
+The task involves, dockerizing a php application that sends data to a MySQL database.
 The source php and index.html code used for this application can be found [here](https://dev.to/satellitebots/create-a-web-server-and-save-form-data-into-mysql-database-using-php-beginners-guide-fah)
 
 
 ### Aim of Project:
 ***
 Over time technology has evolved and so has software development.
-In the ideal world every development environment matches the production one, at least in terms of software versions and features (like compilation options etc.) 
-In times past, developers faced challenges with applications working in one OS and failing in another or applications working in either production stage and failing at deployment stage thus making software development and deployment a challenge
-In more recent times, applications can be packaged together alongside with the dependencies and runtime and shipped 
-to another stage or hosted on another OS, thus solving of the problem of "it's not running my device". 
+In the ideal world, every development environment matches the production one, at least in terms of software versions and features (like compilation options, etc.) 
+In times past, developers faced challenges with applications working in one OS and failing in another or applications working in either the production stage and failing at the deployment stage thus making software development and deployment a challenge
+In more recent times, applications can be packaged together alongside the dependencies and runtime and shipped 
+to another stage or hosted on another OS, thus solving the problem of "it's not running my device". 
 Containerization made this possible; where applications are packaged into containers and shipped
 
-**In this project, using one of the most commonly used software development stacks, LAMP(Linux, Apache, Mysql, php), we built a login website that submits form the mysql database and volumes are used to ensure data persistence.**
+**In this project, using one of the most commonly used software development stacks, LAMP(Linux, Apache, Mysql, php), we built a login website that submits form the MySQL database and volumes are used to ensure data persistence.**
 
 
 ### Requirements/Tools Used:
@@ -56,8 +56,8 @@ Module 2/
 ### Details of Work done:
 ***
 The task was in two parts, 
-- To run containers using docker compose
-- Manage multiple containers without using docker compose. For the purpose of the project, I used a bash script.
+- To run containers using docker-compose
+- Manage multiple containers without using docker-compose. For the purpose of the project, I used a bash script.
 It is important to know that, this can also be done using the terminal.
 
 **Let's explore how the task was done using docker-compose**
@@ -67,18 +67,18 @@ FROM php:7.4-apache
 RUN docker-php-ext-install pdo pdo_mysql
 
 ```
-Using the fundamental docker command, ```FROM``` the php-apache image is used as the base image and the ```docker-php-ext-install pdo pdo_mysql```
+Using the fundamental docker command, ```FROM``` the php-apache image is used as the base image, and the ```docker-php-ext-install pdo pdo_mysql```
 is used as the php drive so the web app can connect to the database. 
 Excluding the part of the image will throw a driver connection error.
 
-The .env file is used to contain the contain environment variables and sensitive data that are not supposed to be contain
-in the main source code such as password and .gitignore is used to ignore the file so that the file is not pushed to the GitHub.
+The .env file is used to contain the contain environment variables and sensitive data that are not supposed to be contained
+in the main source code such as password and .gitignore is used to ignore the file so that the file is not pushed to GitHub.
 
-Since this application is a multi-container application, a docker-compose will be used to manage to the containers.
+Since this application is a multi-container application, a docker-compose will be used to manage the containers.
 The YAML(Ain't markup language) is used to create a docker-compose file, with the .yml extension.
 The docker-compose file should be in the root directory.
 
-Let's take a look at the docker compose file
+Let's take a look at the docker-compose file
 ```
 version: '3.8'
 
